@@ -272,7 +272,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/16/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/18/HelloWorld/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="chenli">
@@ -291,7 +291,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/04/16/hello-world/" itemprop="url">Hello World</a></h1>
+                <a class="post-title-link" href="/2019/04/18/HelloWorld/" itemprop="url">MySQL 操作记录</a></h1>
         
 
         <div class="post-meta">
@@ -303,8 +303,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-16T21:09:02+08:00">
-                2019-04-16
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-18T18:01:27+08:00">
+                2019-04-18
               </time>
             
 
@@ -343,15 +343,46 @@
       
         
           
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+            <p>   MySQL为关系型数据库，所谓的“关系型”可以简单的理解为“表格”的概念。</p>
+<h4 id="什么是关系型数据库"><a href="#什么是关系型数据库" class="headerlink" title="什么是关系型数据库"></a>什么是关系型数据库</h4><ul>
+<li>关系型数据库是依据关系模型来创建的数据库。</li>
+<li>所谓的关系型模型就是“一对一，一对多，多对多”等关系模型，也就是指二维表格，因而一个关系型数据库就是由二维表及其之间的联系组成的一个数据组织。</li>
+<li>关系型数据可以很好地存储一些关系模型的数据。</li>
+<li>关系模型包括数据结构（数据存储的问题，二维表）、操作指令集合（SQL语句）、完整性约束（表内数据约束、表与表之间的约束）。</li>
+</ul>
+<h4 id="连接数据库"><a href="#连接数据库" class="headerlink" title="连接数据库"></a>连接数据库</h4><ul>
+<li>通过ADO连接MySql数据库</li>
+<li>通过MySQL自己的API函数进行连接 [MySQL API][<a href="https://dev.mysql.com/doc/refman/5.7/en/c-api-function-overview.html]" target="_blank" rel="noopener">https://dev.mysql.com/doc/refman/5.7/en/c-api-function-overview.html]</a></li>
+</ul>
+<ul>
+<li>mysql_real_connect()<blockquote>
+<p>连接成功后返回MYSQL* 句柄.</p>
+</blockquote>
+</li>
+<li>mysql_query()<blockquote>
+<p>执行指定的SQL语句</p>
+</blockquote>
+</li>
+<li>mysql_field_count()<blockquote>
+<p>返回连接上最近查询的列数</p>
+</blockquote>
+</li>
+</ul>
+<p>[MySQL API]: </p>
+<h4 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ create database 数据库名字[其他选项];</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">比如：create database test_db character <span class="built_in">set</span> gbk; 在创建数据库的时候通过character <span class="built_in">set</span> gbk 将数据库字符编码指定为gbk.</span><br></pre></td></tr></table></figure>
+<h4 id="创建表"><a href="#创建表" class="headerlink" title="创建表"></a>创建表</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ create table 表名称(列声明);</span><br></pre></td></tr></table></figure>
+<p>创建一个students表<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">create table students(</span><br><span class="line">id int unsigned not null auto_increment primary key,</span><br><span class="line">name char(8) not null,</span><br><span class="line">sex char(4) not null,</span><br><span class="line">age tinyint unsigned not null,</span><br><span class="line">tel char(13) null default <span class="string">"-"</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure></p>
+<h4 id="插入数据"><a href="#插入数据" class="headerlink" title="插入数据"></a>插入数据</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ instert into 表名 [(列名1，列名2，列名3...)] values(值1，值2，值3);</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ instert into students values(<span class="string">"chenli"</span>,<span class="string">"男"</span>,28,<span class="string">"12345674567"</span>); []里面的列名可以不写</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ instert into students [(name,sex,age)] values(<span class="string">"chenli1"</span>,<span class="string">"男"</span>,25); 也可以只插入指定值</span><br></pre></td></tr></table></figure>
+<h4 id="删除数据"><a href="#删除数据" class="headerlink" title="删除数据"></a>删除数据</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ delete from 表名 <span class="built_in">where</span> 删除条件;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ delete from students <span class="built_in">where</span> age &gt; 2; 删除年龄大于2的学生</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ delete from students;删除表中所有数据</span><br></pre></td></tr></table></figure>
+<h4 id="更新数据"><a href="#更新数据" class="headerlink" title="更新数据"></a>更新数据</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ update 表名 <span class="built_in">set</span> 列名=新值 <span class="built_in">where</span> 更新条件;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ update students <span class="built_in">set</span> tel=<span class="string">"45612341234"</span> <span class="built_in">where</span> id = 1;</span><br></pre></td></tr></table></figure>
+<h4 id="查询数据"><a href="#查询数据" class="headerlink" title="查询数据"></a>查询数据</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ select 列名1，列名2，列名3.. from 表名 [查询条件];</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ select * from students;</span><br></pre></td></tr></table></figure>
 
           
         
